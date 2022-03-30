@@ -1,0 +1,12 @@
+.figcap{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.profile-img{
+    transform: rotate(-90deg);
+}
+.project-lines ul li{
+    list-style: none;
+}

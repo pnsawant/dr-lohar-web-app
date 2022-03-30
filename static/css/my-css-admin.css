@@ -1,0 +1,29 @@
+
+
+
+root{
+        --header-height:85px;
+    }
+html{
+        scroll-behavior: smooth;
+     }
+
+.dash-content{
+         margin-top:85px;
+      }
+.card-style{
+         width: 75rem;
+      }
+.admin-warning {
+         margin:0;
+         padding:0;
+         font-size:15px;
+      }
+
+    .dash-toolbar{
+        position:fixed;
+        height:var(--header-height);
+    }
+    h4{
+        scroll-margin-top: 12rem;
+    }
