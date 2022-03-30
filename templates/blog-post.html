@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{{blg_p.title}}</title>
+
+
+  <meta name="description" content="{{blg_p.intro}}">
+  <meta name="keywords" content="{{blg_p.tag1}},{{blg_p.tag2}},{{blg_p.tag3}}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet"
+    href="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/font-awesome/css/font-awesome.min.css">
+
+  {%if params["localhost_True_Or_False"]=="True"%}
+  <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/blog-main/custom-icon-font.css">
+  <link rel="stylesheet" href="/static/css/blog-main/google-font.css">
+  <link rel="stylsheet" href="/static/css/blog-main/fancy-box.css">
+  <link rel="stylesheet" href="/static/css/blog-main/theme-style.css">
+  {%else%}
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Custom icon font-->
+  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/css/fontastic.css">
+  <!-- Google fonts - Open Sans-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <!-- Fancybox-->
+  <link rel="stylesheet"
+    href="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/@fancyapps/fancybox/jquery.fancybox.min.css">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/css/style.default.css"
+    id="theme-stylesheet">
+  {%endif%}
+
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/css/custom.css">
+
+
+  <!-- Favicons -->
+  <link rel="icon" href="/static/img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/static/img/favicon/site.webmanifest">
+
+
+  <!-- Tweaks for older IEs-->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+
+  <!--My added stuff-->
+  <link rel="stylesheet" href="/static/css/my-css-blog-post.css">
+</head>
+
+<body>
+  <header class="header">
+    <!-- Main Navbar-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Navbar Brand -->
+        <div class="navbar-header d-flex align-items-center justify-content-between">
+          <!-- Navbar Brand --><a href="/blog" class="navbar-brand">Dr Gaurav Lohar's Blog</a>
+
+          <!-- Toggle Button-->
+          <!--<button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span><span></span><span></span></button>-->
+        </div>
+        <!-- Navbar Menu -->
+        <div id="navbarcollapse" class="collapse navbar-collapse">
+        </div>
+
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{blg_p.title}}</li>
+      </ol>
+    </nav>
+
+    </div>
+
+
+  </header>
+  <div class="container">
+    <div class="row">
+      <!-- Latest Posts -->
+      <main class="post blog-post col-lg-8">
+        <div class="container">
+          <div class="post-single">
+            <div class="post-thumbnail"><img src="{{blg_p.featuredimglink}}" alt="featuredimglink" class="img-fluid">
+            </div>
+            <div class="post-details">
+              <div class="post-meta d-flex justify-content-between">
+                <div class="category"><a>{{blg_p.tag1}}</a><a>{{blg_p.tag2}}</a></div>
+              </div>
+              <h1>{{blg_p.title}}<a>
+
+                </a></h1>
+
+              <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="/"
+                  class="author d-flex align-items-center flex-wrap">
+                  <div class="avatar"><img src="/static/img/profile-img.jpg" alt="img" class="profile-img img-fluid">
+                  </div>
+                  <div class="title"><span>Dr Gaurav Lohar</span></div>
+                </a>
+                <div class="d-flex align-items-center flex-wrap">
+                  <div class="date"><i class="icon-clock"></i> {{blg_p.info}}</div>
+                </div>
+              </div>
+
+              <div class="post-body">
+                <p class="lead">{{blg_p.intro}}</p>
+
+                <h3>{{blg_p.subtitle}}</h3>
+
+                <p> <img src="{{blg_p.imglink1}}" class="img-fluid"></p>
+
+                <p>{{blg_p.content1}}</p>
+
+                <p>{{blg_p.content2}}</p>
+
+                <p> <img src="{{blg_p.imglink2}}" class="img-fluid"></p>
+
+                <p>{{blg_p.content3}}</p>
+
+                <p> <img src="{{blg_p.imglink3}}" class="img-fluid"></p>
+
+                <p>{{blg_p.content4}}</p>
+
+                <p> <img src="{{blg_p.imglink4}}" class="img-fluid"></p>
+              </div>
+              <div class="post-tags">
+                <a class="tag">#{{blg_p.tag1}}</a>
+                <a class="tag">#{{blg_p.tag2}}</a>
+                <a class="tag">#{{blg_p.tag3}}</a>
+              </div>
+              <div>
+                <br><br>
+                <h5>Any External Link (if present) -</h5>
+                <br>
+                {% if params["localhost_True_Or_False"]=="True" %}
+                <a href="{{blg_p.extlink}}">{{blg_p.extlink}}</a>
+                {% else %}
+                <a href="{{ ''.join(['', blg_p.extlink]) }}">{{blg_p.extlink}}</a>
+                {% endif %}
+                <br>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </main>
+      <aside class="col-lg-4">
+
+        <div class="widget latest-posts">
+          <header>
+            <h3 class="h6">Latest Posts</h3>
+          </header>
+          {%for blg_recent in blg_recent%}
+          <div class="blog-posts"><a href="/blog/post/{{blg_recent.slug}}">
+
+              <div class="item d-flex align-items-center">
+                <div class="image"><img src="{{blg_recent.featuredimglink}}" alt="featuredimg" class="img-fluid"></div>
+                <div class="title"><strong>{{blg_recent.title}}</strong>
+                  <div class="d-flex align-items-center">
+                    <div class="views">
+
+                      #{{blg_recent.tag1}}</div>
+                    <div class="comments">
+
+                      #{{blg_recent.tag2}}</div>
+                  </div>
+                </div>
+              </div>
+            </a><a href="#">
+
+          </div>
+          {%endfor%}
+
+          <!-- Widget [Tags Cloud Widget]-->
+          <div class="widget tags">
+            <header>
+              <h3 class="h6">Tags</h3>
+            </header>
+            <ul class="list-inline">
+              <li class="list-inline-item tag">#{{blg_p.tag1}}</li>
+              <li class="list-inline-item tag">#{{blg_p.tag2}}</li>
+              <li class="list-inline-item tag">#{{blg_p.tag3}}</li>
+            </ul>
+          </div>
+      </aside>
+    </div>
+  </div>
+  <!-- Page Footer-->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="logo">
+            <h6 class="text-white">Dr Gaurav Lohar's Blog</h6>
+          </div>
+          <div class="contact-details">
+            <p>Lal Bahadur Shastri College, Satara - 415002</p>
+            <p>Phone: +91-9604695030</p>
+            <p>Email: <a href="mailto:gauravlohar24@gmail.com">gauravlohar24@gmail.com</a></p>
+            <ul class="social-menu">
+              <li class="list-inline-item"><a href="https://twitter.com/gauravlohar88"><i
+                    class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.facebook.com/gaurav.lohar2"><i
+                    class="fab fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.linkedin.com/in/gaurav-lohar-885b5671/"><i
+                    class="fab fa-linkedin"></i></a></li>
+              <li class="list-inline-item"><a href="https://scholar.google.co.in/citations?user=JvcR34UAAAAJ&hl=en"><i
+                    class="fas fa-atom"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.researchgate.net/profile/Gaurav_Lohar3/experience"><i
+                    class="fab fa-researchgate"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menus d-flex">
+            <ul class="list-unstyled">
+              <li> <a href="/">My Site</a></li>
+              <li> <a href="/#projectandpatents">Projects</a></li>
+              <li> <a href="/#projectandpatents">Patents</a></li>
+              <li> <a href="/#awards">Awards</a></li>
+            </ul>
+            <ul class="list-unstyled">
+              <li> <a href="/#collaborations">Collaborations</a></li>
+              <li> <a href="/#publications">Publications</a></li>
+              <li> <a href="/#conferences">Conferences</a></li>
+              <li> <a href="/#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="latest-posts">
+            {%for blg_three in blg_three%}
+            <a href="/blog/post/{{blg_three.slug}}">
+              <div class="post d-flex align-items-center">
+                <div class="image"><img src="{{blg_three.featuredimglink}}" alt="img" class="img-fluid"></div>
+                <div class="title"><strong>{{blg_three.title}}</strong><span
+                    class="date last-meta">{{blg_three.info}}</span></div>
+              </div>
+            </a>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyrights">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; All rights reserved. Dr Gaurav Lohar's Blog</p>
+          </div>
+          <div class="col-md-6 text-right">
+            <p>
+              Developed by <a href="mailto:sawantprasad121@gmail.com">Prasad </a> & <a
+                href="https://bootstrapious.com">Bootstrapious</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JavaScript files-->
+  {% if params["localhost_True_Or_False"]=="True"%}
+  <script src="/static/js/blog-main/jquery-min.js"></script>
+  <script src="/static/js/blog-main/popper.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/js/blog-main/jquery-cookie.js"></script>
+  <script src="/static/js/blog-main/jquery-fancybox.js"></script>
+  <script src="/static/js/blog-main/front.js"></script>
+  {%else%}
+  <script src="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/jquery/jquery.min.js"></script>
+  <script src="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/popper.js/umd/popper.min.js"> </script>
+  <script src="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/jquery.cookie/jquery.cookie.js"> </script>
+  <script
+    src="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+  <script src="https://d19m59y37dris4.cloudfront.net/blog/1-2-1/js/front.js"></script>
+  {%endif%}
+</body>
+
+</html>

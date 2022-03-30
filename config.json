@@ -1,0 +1,22 @@
+
+
+{
+    "my_gmail_id":"",
+    "gmail_password":"",
+
+    "admin_user":"",
+    "admin_password":"",
+
+    "secret_key" : "",
+    
+    "localhost_True_Or_False": "",
+    "localhost_uri" : "",
+    "localhost_bind_blog_uri": "",
+
+    "pythonanywhere_db_mysql_password" : "",
+    "pythonanywhere_uri" : "",
+    "pythonanywhere_bind_blog_uri": "",
+    
+    "app_debug_value":""
+    
+}

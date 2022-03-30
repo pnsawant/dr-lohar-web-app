@@ -1,0 +1,2111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Admin Panel">
+  <meta name="description" content="Admin Panel">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/admin.css">
+
+
+  <title>Admin</title>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/static/img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/static/img/favicon/site.webmanifest">
+
+  <!--My added Stuff-->
+  <link rel="stylesheet" href="/static/css/my-css-admin.css">
+
+
+</head>
+
+
+
+<body>
+  <div class="dash">
+    <div class="dash-nav dash-nav-dark">
+      <header>
+        <a href="#!" class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </a>
+        <a href="/admin" class="easion-logo"><i class="fas fa-sun"></i> <span>Dr Gaurav</span></a>
+      </header>
+      <nav class="dash-nav-list">
+        <a href="/admin" class="dash-nav-item">
+          <i class="fas fa-home"></i>
+          Dashboard
+        </a>
+        <a href="#blog_posts" class="dash-nav-item">
+          <i class="fas fa-pen"></i>
+          Blog Posts
+        </a>
+        <a href="#projects" class="dash-nav-item">
+          <i class="fas fa-project-diagram"></i>
+          Projects
+        </a>
+        <a href="#patents" class="dash-nav-item">
+          <i class="fas fa-user-edit"></i>
+          Patents
+        </a>
+        <a href="#publications" class="dash-nav-item">
+          <i class="fas fa-microscope"></i>
+          Publications
+        </a>
+        <a href="#awards" class="dash-nav-item">
+          <i class="fas fa-award"></i>
+          Awards
+        </a>
+        <a href="#memberships" class="dash-nav-item">
+          <i class="fas fa-chalkboard-teacher"></i>
+          Memberships
+        </a>
+        <a href="#conferences" class="dash-nav-item">
+          <i class="fas fa-users-cog"></i>
+          Conferences
+        </a>
+        <a href="#workshop" class="dash-nav-item">
+          <i class="fas fa-chalkboard-teacher"></i>
+          Workshop
+        </a>
+        <a href="#indpro" class="dash-nav-item">
+          <i class="fas fa-book-reader"></i>
+          Induction Program
+        </a>
+        <a href="#conforgsec" class="dash-nav-item">
+          <i class="fas fa-users-cog"></i>
+          Conf. Org. Sec.
+        </a>
+
+        <a href="#collaborations" class="dash-nav-item">
+          <i class="fas fa-handshake"></i>
+          Collaborations
+        </a>
+        <a href="#groupmembers" class="dash-nav-item">
+          <i class="fas fa-users"></i>
+          Group Members
+        </a>
+        <a href="#contacts" class="dash-nav-item">
+          <i class="fas fa-envelope"></i>
+          Contacts
+        </a>
+        <a href="/logout" class="dash-nav-item">
+          <i class="fas fa-share-square"></i>
+          Log Out
+        </a>
+
+      </nav>
+    </div>
+    <div class="dash-app">
+      <header class="dash-toolbar">
+        <a href="#!" class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </a>
+        <h1 class="ml-5 mt-2">Admin Panel</h1>
+        <div class="admin-warning  ml-5">
+          <strong class="text-danger">WARNING :</strong>
+          <ol>
+            <li>PASTE ONLY GOOGLE DRIVE SHARABLE LINK</li>
+            <li>DO NOT ADD SPACE AFTER PASTING LINKS</li>
+            <li>DO NOT ADD SPECIAL CHARACTERS IN BLOG POST TITLE (LIKE ?,@,#,ETC)</li>
+            <li><strong class="text-danger">FORMAT :
+                https://drive.google.com/file/d/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/view?usp=sharing</strong></li>
+          </ol>
+
+        </div>
+
+
+        <div class="tools">
+
+          <div class="dropdown tools-item">
+            <a href="#" class="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+              <a class="dropdown-item" href="/logout">Logout</a>
+
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="dash-content">
+        <div class="container-fluid">
+          <div class="row dash-row">
+            <div class="col-xl-4">
+              <div class="stats stats-primary">
+                <h3 class="stats-title"> Blog Posts </h3>
+                <div class="stats-content">
+                  <div class="stats-icon">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                  <div class="stats-data">
+                    <div class="stats-number">{{blg_post_last.srno}}</div>
+                    <div class="stats-change">
+                      <span class="stats-percentage">{{blg_post_last.info}}</span>
+                      <span class="stats-timeframe">posted on</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="stats stats-success ">
+                <h3 class="stats-title"> Publications </h3>
+                <div class="stats-content">
+                  <div class="stats-icon">
+                    <i class="fas fa-book-open"></i>
+                  </div>
+                  <div class="stats-data">
+                    <div class="stats-number">{{publi_last.srno}}</div>
+                    <div class="stats-change">
+                      <span class="stats-percentage">{{publi_last.year}}</span>
+                      <span class="stats-timeframe">publishing year</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-xl-4">
+              <div class="stats stats-danger">
+                <h3 class="stats-title"> Last Contact By </h3>
+                <div class="stats-content">
+                  <div class="stats-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="stats-data">
+                    <div class="stats-number">{{cont_last.name}}</div>
+                    <div class="stats-change">
+                      <span class="stats-percentage">{{cont_last.info}}</span>
+                      <span class="stats-timeframe">contacted on</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!--==================My Added Stuff====================-->
+
+          <!--==============Blog Posts Stuff=============-->
+          <!--Display Blog Posts Table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <h4 id="blog_posts"><strong># Blog Posts</strong>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Blog_PostsModal" data-bs-whatever="@mdo">Add New Post</button>
+                </h4>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Post Title</th>
+                    <!--<th scope="col">Subtitle</th>-->
+                    <!--<th scope="col">Slug</th>-->
+                    <th scope="col">Info</th>
+                    <!--<th scope="col">Featured Img Link</th>-->
+                    <th scope="col">Tag1</th>
+                    <th scope="col">Tag2</th>
+                    <th scope="col">Tag3</th>
+                    <!--<th scope="col">Content 1</th>-->
+                    <!--<th scope="col">ImgLink1</th>-->
+                    <!--<th scope="col">Content 2</th>-->
+                    <!--<th scope="col">ImgLink2</th>-->
+                    <!--<th scope="col">Ext Link</th>-->
+                    <!--<th scope="col">Content 3</th>-->
+                    <!--<th scope="col">ImgLink3</th>-->
+                    <!--<th scope="col">Content 4</th>-->
+                    <!--<th scope="col">ImgLink4</th>-->
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for blg in blg|reverse%}
+                  <tr>
+                    <th scope="row">{{blg.srno}}</th>
+                    <td>{{blg.title}}</td>
+                    <!--<td>{{blg.subtitle}}</td>-->
+                    <!--<td>{{blg.slug}}</td>-->
+                    <td>{{blg.info}}</td>
+                    <!--<td>{{blg.featuredimglink}}</td>-->
+                    <td>{{blg.tag1}}</td>
+                    <td>{{blg.tag2}}</td>
+                    <td>{{blg.tag3}}</td>
+                    <!--<td>{{blg.content1}}</td>-->
+                    <!--<td>{{blg.imglink1}}</td>-->
+                    <!--<td>{{blg.content2}}</td>-->
+                    <!--<td>{{blg.imglink2}}</td>-->
+                    <!--<td>{{blg.extlink}}</td>-->
+                    <!--<td>{{blg.content3}}</td>-->
+                    <!--<td>{{blg.imglink3}}</td>-->
+                    <!--<td>{{blg.content4}}</td>-->
+                    <!--<td>{{blg.imglink4}}</td>-->
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_Blog_PostsModal{{blg.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_blg/{{blg.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+
+
+          <!--Add New Blog Post Modal-->
+          <div class="modal fade" id="Blog_PostsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Post</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                  <form action="/admin" method="post">
+                    <!--  Sr.No.        -->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Sr.No. :</label>
+                      <input type="text" class="form-control" id="post_srno" name="post_srno" placeholder="">
+                    </div>
+
+                    <!--Title-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Title :</label>
+                      <input type="text" class="form-control" id="post_title" name="post_title" placeholder="">
+                    </div>
+
+                    <!--Post Subtitle-->
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Subtitle :</label>
+                      <textarea class="form-control" id="post_subtl" name="post_subtl" rows="4"></textarea>
+                    </div>
+
+
+                    <!--Featured Image-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Featured Image Link :</label>
+                      <input type="text" class="form-control" id="featured_imglink" name="featured_imglink"
+                        placeholder="e.g. https://img.com/featuredimg">
+                    </div>
+
+                    <!--Tags-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Tag 1 (optional) :</label>
+                      <input type="text" class="form-control" id="tag_1" name="tag_1" placeholder="Physics">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Tag 2 (optional) :</label>
+                      <input type="text" class="form-control" id="tag_2" name="tag_2" placeholder="Graphene">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Tag 3 (optional) :</label>
+                      <input type="text" class="form-control" id="tag_3" name="tag_3" placeholder="Research">
+                    </div>
+
+                    <!--Post Intro-->
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Post Introduction :</label>
+                      <textarea class="form-control" id="post_intro" name="post_intro" rows="8"></textarea>
+                    </div>
+
+                    <!--Post Content & Image Links-->
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 1 :</label>
+                      <textarea class="form-control" id="content_para_1" name="content_para_1" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 1 :</label>
+                      <input type="text" class="form-control" id="post_link_1" name="post_link_1"
+                        placeholder="e.g. https://img.com/img1">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 2 :</label>
+                      <textarea class="form-control" id="content_para_2" name="content_para_2" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 2 :</label>
+                      <input type="text" class="form-control" id="post_link_2" name="post_link_2"
+                        placeholder="e.g. https://img.com/img2">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 3 :</label>
+                      <textarea class="form-control" id="content_para_3" name="content_para_3" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 3 :</label>
+                      <input type="text" class="form-control" id="post_link_3" name="post_link_3"
+                        placeholder="e.g. https://img.com/img3">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 4 :</label>
+                      <textarea class="form-control" id="content_para_4" name="content_para_4" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 4 :</label>
+                      <input type="text" class="form-control" id="post_link_4" name="post_link_4"
+                        placeholder="e.g. https://img.com/img4">
+                    </div>
+
+                    <!--Post External Links-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Any External Link :</label>
+                      <input type="text" class="form-control" id="post_external_link" name="post_external_link"
+                        placeholder="e.g. https://google.com">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!--Edit Blog Post Modal-->
+          {%for blg in blg%}
+          <div class="modal fade" id="Edit_Blog_PostsModal{{blg.srno}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                  <form action="/edit_blg/{{blg.srno}}/" method="post">
+                    <!--  Sr.No.        -->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Sr.No. :</label>
+                      <input type="text" class="form-control" id="edit_post_srno" name="edit_post_srno"
+                        value="{{blg.srno}}" placeholder="">
+                    </div>
+
+                    <!--Title-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Title :</label>
+                      <input type="text" class="form-control" id="edit_post_title" name="edit_post_title"
+                        value="{{blg.title}}" placeholder="">
+                    </div>
+
+                    <!--Post Subtitle-->
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Subtitle :</label>
+                      <textarea class="form-control" id="edit_post_subtl" name="edit_post_subtl"
+                        rows="4">{{blg.subtitle}}</textarea>
+                    </div>
+
+
+                    <!--Featured Image-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Featured Image Link :</label>
+                      <input type="text" class="form-control" id="edit_featured_imglink" name="edit_featured_imglink"
+                        value="{{blg.featuredimglink}}" placeholder="e.g. https://img.com/featuredimg">
+                    </div>
+
+                    <!--Tags-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Tag 1 (optional) :</label>
+                      <input type="text" class="form-control" id="edit_tag_1" name="edit_tag_1" value="{{blg.tag1}}"
+                        placeholder="Physics">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Tag 2 (optional) :</label>
+                      <input type="text" class="form-control" id="edit_tag_2" name="edit_tag_2" value="{{blg.tag2}}"
+                        placeholder="Graphene">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Tag 3 (optional) :</label>
+                      <input type="text" class="form-control" id="edit_tag_3" name="edit_tag_3" value="{{blg.tag3}}"
+                        placeholder="Research">
+                    </div>
+
+                    <!--Post Intro-->
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Post Introduction :</label>
+                      <textarea class="form-control" id="edit_post_intro" name="edit_post_intro"
+                        rows="8">{{blg.intro}}</textarea>
+                    </div>
+
+                    <!--Post Content & Image Links-->
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 1 :</label>
+                      <textarea class="form-control" id="edit_content_para_1" name="edit_content_para_1"
+                        rows="10">{{blg.content1}}</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 1 :</label>
+                      <input type="text" class="form-control" id="edit_post_link_1" name="edit_post_link_1"
+                        value="{{blg.imglink1}}" placeholder="e.g. https://img.com/img1">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 2 :</label>
+                      <textarea class="form-control" id="edit_content_para_2" name="edit_content_para_2"
+                        rows="10">{{blg.content2}}</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 2 :</label>
+                      <input type="text" class="form-control" id="edit_post_link_2" name="edit_post_link_2"
+                        value="{{blg.imglink2}}" placeholder="e.g. https://img.com/img2">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 3 :</label>
+                      <textarea class="form-control" id="edit_content_para_3" name="edit_content_para_3"
+                        rows="10">{{blg.content3}}</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 3 :</label>
+                      <input type="text" class="form-control" id="edit_post_link_3" name="edit_post_link_3"
+                        value="{{blg.imglink3}}" placeholder="e.g. https://img.com/img3">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Content Para 4 :</label>
+                      <textarea class="form-control" id="edit_content_para_4" name="edit_content_para_4"
+                        rows="10">{{blg.content4}}</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Post Image Link 4 :</label>
+                      <input type="text" class="form-control" id="edit_post_link_4" name="edit_post_link_4"
+                        value="{{blg.imglink4}}" placeholder="e.g. https://img.com/img4">
+                    </div>
+
+                    <!--Post External Links-->
+                    <div class="form-group">
+                      <label for="exampleFormControlInput2">Any External Link :</label>
+                      <input type="text" class="form-control" id="edit_post_external_link"
+                        name="edit_post_external_link" value="{{blg.extlink}}" placeholder="e.g. https://google.com">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+
+          <!--============ Projects Stuff =============-->
+          <!--Projects display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="projects"><strong># Projects</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Addnew_ProjectsModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Subtitle</th>
+                    <th scope="col">ImageLink</th>
+                    <!--<th scope="col">Para1</th>-->
+                    <!--<th scope="col">Line1</th>-->
+                    <!--<th scope="col">Line2</th>-->
+                    <!--<th scope="col">Line3</th>-->
+                    <!--<th scope="col">Line4</th>-->
+                    <!--<th scope="col">Para2</th>-->
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for prj in prj|reverse%}
+                  <tr>
+                    <th scope="row">{{prj.srno}}</th>
+                    <td>{{prj.title}}</td>
+                    <td>{{prj.subtitle}}</td>
+                    <td>{{prj.imagelink}}</td>
+                    <!--<td>{{prj.para1}}</td>-->
+                    <!--<td>{{prj.line1}}</td>-->
+                    <!--<td>{{prj.line2}}</td>-->
+                    <!--<td>{{prj.line3}}</td>-->
+                    <!--<td>{{prj.line4}}</td>-->
+                    <!--<td>{{prj.para2}}</td>-->
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_ProjectsModal{{prj.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_prj/{{prj.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add new Projects modal-->
+          <div class="modal fade" id="Addnew_ProjectsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Project</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="prj_form" name="prj_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="prj_srno" name="prj_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="prj_title" name="prj_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="prj_subtl" name="prj_subtl">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="prj_imglink" name="prj_imglink">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Para 1:</label>
+                      <textarea class="form-control" id="prj_para1" name="prj_para1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 1:</label>
+                      <textarea class="form-control" id="prj_line1" name="prj_line1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 2:</label>
+                      <textarea class="form-control" id="prj_line2" name="prj_line2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 3:</label>
+                      <textarea class="form-control" id="prj_line3" name="prj_line3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 4:</label>
+                      <textarea class="form-control" id="prj_line4" name="prj_line4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Para 2:</label>
+                      <textarea class="form-control" id="prj_para2" name="prj_para2"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--Edit Projects-->
+          {%for prj in prj%}
+          <div class="modal fade" id="Edit_ProjectsModal{{prj.srno}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Patent</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_prj_form" name="edit_prj_form" action="/edit_prj/{{prj.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_prj_srno" value="{{prj.srno}}"
+                        name="edit_prj_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="edit_prj_title" value="{{prj.title}}"
+                        name="edit_prj_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="edit_prj_subtl" value="{{prj.subtitle}}"
+                        name="edit_prj_subtl">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="edit_prj_imglink" value="{{prj.imagelink}}"
+                        name="edit_prj_imglink">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Para 1:</label>
+                      <textarea type="text" class="form-control" id="edit_prj_para1"
+                        name="edit_prj_para1">{{prj.para1}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 1:</label>
+                      <textarea type="text" class="form-control" id="edit_prj_line1"
+                        name="edit_prj_line1">{{prj.line1}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 2:</label>
+                      <textarea type="text" class="form-control" id="edit_prj_line2"
+                        name="edit_prj_line2">{{prj.line2}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 3:</label>
+                      <textarea type="text" class="form-control" id="edit_prj_line3"
+                        name="edit_prj_line3">{{prj.line3}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 4:</label>
+                      <textarea type="text" class="form-control" id="edit_prj_line4"
+                        name="edit_prj_line4">{{prj.line4}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Para 2:</label>
+                      <textarea type="text" class="form-control" id="edit_prj_para2"
+                        name="edit_prj_para2">{{prj.para2}}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+          <!--============ Patents Stuff =============-->
+          <!--Patents display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="patents"><strong># Patents</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Addnew_PatentsModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Subtitle</th>
+                    <th scope="col">ImageLink</th>
+                    <!--<th scope="col">Para1</th>-->
+                    <!--<th scope="col">Line1</th>-->
+                    <!--<th scope="col">Line2</th>-->
+                    <!--<th scope="col">Line3</th>-->
+                    <!--<th scope="col">Line4</th>-->
+                    <!--<th scope="col">Para2</th>-->
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for pnt in pnt|reverse%}
+                  <tr>
+                    <th scope="row">{{pnt.srno}}</th>
+                    <td>{{pnt.title}}</td>
+                    <td>{{pnt.subtitle}}</td>
+                    <td>{{pnt.imagelink}}</td>
+                    <!--<td>{{pnt.para1}}</td>-->
+                    <!--<td>{{pnt.line1}}</td>-->
+                    <!--<td>{{pnt.line2}}</td>-->
+                    <!--<td>{{pnt.line3}}</td>-->
+                    <!--<td>{{pnt.line4}}</td>-->
+                    <!--<td>{{pnt.para2}}</td>-->
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_PatentsModal{{pnt.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_pnt/{{pnt.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add new Patents modal-->
+          <div class="modal fade" id="Addnew_PatentsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Patent</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="pnt_form" name="pnt_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="pnt_srno" name="pnt_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="pnt_title" name="pnt_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="pnt_subtl" name="pnt_subtl">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="pnt_imglink" name="pnt_imglink">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Para 1:</label>
+                      <textarea class="form-control" id="pnt_para1" name="pnt_para1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 1:</label>
+                      <textarea class="form-control" id="pnt_line1" name="pnt_line1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 2:</label>
+                      <textarea class="form-control" id="pnt_line2" name="pnt_line2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 3:</label>
+                      <textarea class="form-control" id="pnt_line3" name="pnt_line3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 4:</label>
+                      <textarea class="form-control" id="pnt_line4" name="pnt_line4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Para 2:</label>
+                      <textarea class="form-control" id="pnt_para2" name="pnt_para2"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--Edit Patents-->
+          {%for pnt in pnt%}
+          <div class="modal fade" id="Edit_PatentsModal{{pnt.srno}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Patent</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_pnt_form" name="edit_pnt_form" action="/edit_pnt/{{pnt.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_pnt_srno" value="{{pnt.srno}}"
+                        name="edit_pnt_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="edit_pnt_title" value="{{pnt.title}}"
+                        name="edit_pnt_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="edit_pnt_subtl" value="{{pnt.subtitle}}"
+                        name="edit_pnt_subtl">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="edit_pnt_imglink" value="{{pnt.imagelink}}"
+                        name="edit_pnt_imglink">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Para 1:</label>
+                      <textarea type="text" class="form-control" id="edit_pnt_para1"
+                        name="edit_pnt_para1">{{pnt.para1}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 1:</label>
+                      <textarea type="text" class="form-control" id="edit_pnt_line1"
+                        name="edit_pnt_line1">{{pnt.line1}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 2:</label>
+                      <textarea type="text" class="form-control" id="edit_pnt_line2"
+                        name="edit_pnt_line2">{{pnt.line2}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 3:</label>
+                      <textarea type="text" class="form-control" id="edit_pnt_line3"
+                        name="edit_pnt_line3">{{pnt.line3}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Line 4:</label>
+                      <textarea type="text" class="form-control" id="edit_pnt_line4"
+                        name="edit_pnt_line4">{{pnt.line4}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Para 2:</label>
+                      <textarea type="text" class="form-control" id="edit_pnt_para2"
+                        name="edit_pnt_para2">{{pnt.para2}}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+          <!--==========Publications Stuff=============-->
+          <!--Display Publication Table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="publications"><strong># Publications</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Addnew_PublicationsModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">References</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for publi in publi|reverse%}
+                  <tr>
+                    <th scope="row">{{publi.srno}}</th>
+                    {% if params["localhost_True_Or_False"]=="True" %}
+                    <td>{{publi.reference}}</br><strong>DOI : </strong><a href="{{publi.doi}}"
+                        class="link-primary">{{publi.doi}}</a></td>
+                    {% else %}
+                    <td>{{publi.reference}}</br><strong>DOI : </strong><a href="{{ ''.join(['', publi.doi]) }}"
+                        class="link-primary">{{publi.doi}}</a></td>
+                    {% endif %}
+                    <td>{{publi.year}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_PublicationsModal{{publi.srno}}" data-bs-whatever="@mdo">Edit</button>
+                    </td>
+                    <td><a href='/delete_publi/{{publi.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+          <!--Add new Publi modal-->
+          <div class="modal fade" id="Addnew_PublicationsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Publication</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="publi_form" name="publi_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="publi_srno" name="publi_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Reference:</label>
+                      <textarea class="form-control" id="publi_reference" name=publi_reference></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">DOI:</label>
+                      <textarea class="form-control" id="publi_doi" name="publi_doi"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="publi_year" name="publi_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Edit Publi Modal-->
+          {%for publi in publi%}
+          <div class="modal fade" id="Edit_PublicationsModal{{publi.srno}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Publication</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_publi_form" name="edit_publi_form" action="/edit_publi/{{publi.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_publi_srno" value="{{publi.srno}}"
+                        name="edit_publi_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Reference:</label>
+                      <textarea type="text" class="form-control" id="edit_publi_reference" value=""
+                        name=edit_publi_reference>{{publi.reference}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">DOI:</label>
+                      <input type="" class="form-control" id="edit_publi_doi" value="{{publi.doi}}"
+                        name="edit_publi_doi">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="edit_publi_year" value="{{publi.year}}"
+                        name="edit_publi_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+          <!--=============Awards Stuff==============-->
+          <!--Awards display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="awards"><strong># Awards</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Addnew_AwardsModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Subtitle</th>
+                    <th scope="col">Image Link</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for awrd in awrd|reverse%}
+                  <tr>
+                    <th scope="row">{{awrd.srno}}</th>
+                    <td>{{awrd.title}}</td>
+                    <td>{{awrd.subtitle}}</td>
+                    <td>{{awrd.imagelink}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_AwardsModal{{awrd.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_awards/{{awrd.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--Add new Awards modal-->
+          <div class="modal fade" id="Addnew_AwardsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Award</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="award_form" name="award_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="award_srno" name="award_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="award_title" name="award_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="award_subt" name="award_subt">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="award_imglink" name="award_imglink">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Edit Awards Modal-->
+          {%for awrd in awrd%}
+          <div class="modal fade" id="Edit_AwardsModal{{awrd.srno}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Award</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_awrd_form" name="edit_awrd_form" action="/edit_awrd/{{awrd.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_awrd_srno" value="{{awrd.srno}}"
+                        name="edit_awrd_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="edit_awrd_title" value="{{awrd.title}}"
+                        name="edit_awrd_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="edit_awrd_subtl" value="{{awrd.subtitle}}"
+                        name="edit_awrd_subtl">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="edit_awrd_link" value="{{awrd.imagelink}}"
+                        name="edit_awrd_imglink">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+          <!--============ Memberships Stuff =============-->
+          <!--Memberships display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="memberships"><strong># Memberships</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Addnew_MembershipsModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Subtitle</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for memb in memb|reverse%}
+                  <tr>
+                    <th scope="row">{{memb.srno}}</th>
+                    <td>{{memb.title}}</td>
+                    <td>{{memb.subtitle}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_MembershipsModal{{memb.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_memberships/{{memb.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--Add new Membership modal-->
+          <div class="modal fade" id="Addnew_MembershipsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Membership</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="memb_form" name="membership_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="membership_srno" name="membership_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="membership_title" name="membership_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="membership_subt" name="membership_subt">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Edit Memberships Modal-->
+          {%for memb in memb%}
+          <div class="modal fade" id="Edit_MembershipsModal{{memb.srno}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Membership</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_memb_form" name="edit_memb_form" action="/edit_memb/{{memb.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_memb_srno" value="{{memb.srno}}"
+                        name="edit_memb_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="edit_memb_title" value="{{memb.title}}"
+                        name="edit_memb_title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Subtitle:</label>
+                      <input type="text" class="form-control" id="edit_memb_subtl" value="{{memb.subtitle}}"
+                        name="edit_memb_subtl">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+          <!--===============Conferences Stuff================-->
+          <!--Conferences Display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="conferences"><strong># Conferences</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#AddNewConferencesModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class="table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Name of the Conference</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for conf in conf|reverse%}
+                  <tr>
+                    <th scope="row">{{conf.srno}}</th>
+                    <td>{{conf.name}}</td>
+                    <td>{{conf.place}}</td>
+                    <td>{{conf.year}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_ConferencesModal{{conf.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_conf/{{conf.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add New Conf Modal-->
+          <div class="modal fade" id="AddNewConferencesModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Conference</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="conf_form" name="conf_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="conf_srno" name="conf_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Conference:</label>
+                      <textarea class="form-control" id="conf_name" name=conf_name></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <textarea class="form-control" id="conf_place" name="conf_place"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="conf_year" name="conf_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Edit Conf Modal-->
+          {%for conf in conf%}
+          <div class="modal fade" id="Edit_ConferencesModal{{conf.srno}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Conference</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_conf_form" name="edit_conf_form" action="/edit_conf/{{conf.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_conf_srno" value="{{conf.srno}}"
+                        name="edit_conf_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Conferences:</label>
+                      <textarea type="text" class="form-control" id="edit_conf_name" value=""
+                        name="edit_conf_name">{{conf.name}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <input type="" class="form-control" id="edit_conf_place" value="{{conf.place}}"
+                        name="edit_conf_place">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="edit_conf_year" value="{{conf.year}}"
+                        name="edit_conf_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+
+          <!--===============Workshop Stuff================-->
+          <!--Workshop Display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="workshop"><strong># Workshop</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#AddNewWorkshopModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class="table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Name of the Workshop</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for wrk in wrk|reverse%}
+                  <tr>
+                    <th scope="row">{{wrk.srno}}</th>
+                    <td>{{wrk.name}}</td>
+                    <td>{{wrk.place}}</td>
+                    <td>{{wrk.year}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_WorkshopModal{{wrk.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_wrk/{{wrk.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add New Workshop Modal-->
+          <div class="modal fade" id="AddNewWorkshopModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Workshop</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="wrk_form" name="wrk_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="wrk_srno" name="wrk_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Workshop:</label>
+                      <textarea class="form-control" id="wrk_name" name="wrk_name"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <textarea class="form-control" id="wrk_place" name="wrk_place"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="wrk_year" name="wrk_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Edit Work Modal-->
+          {%for wrk in wrk%}
+          <div class="modal fade" id="Edit_WorkshopModal{{wrk.srno}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Conference</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_wrk_form" name="edit_wrk_form" action="/edit_wrk/{{wrk.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_wrk_srno" value="{{wrk.srno}}"
+                        name="edit_wrk_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Conferences:</label>
+                      <textarea type="text" class="form-control" id="edit_wrk_name" value=""
+                        name="edit_wrk_name">{{wrk.name}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <input type="" class="form-control" id="edit_wrk_place" value="{{wrk.place}}"
+                        name="edit_wrk_place">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="edit_wrk_year" value="{{wrk.year}}"
+                        name="edit_wrk_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+          <!--===============Induction Program Stuff================-->
+          <!--Induction Program Display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="indpro"><strong># Induction Program / Refresher Course</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#AddNewindproModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class="table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Name of the Program</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for indpro in indpro|reverse%}
+                  <tr>
+                    <th scope="row">{{indpro.srno}}</th>
+                    <td>{{indpro.name}}</td>
+                    <td>{{indpro.place}}</td>
+                    <td>{{indpro.year}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_indproModal{{indpro.srno}}" data-bs-whatever="@mdo">Edit</button></td>
+                    <td><a href='/delete_indpro/{{indpro.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add New Induction Program Modal-->
+          <div class="modal fade" id="AddNewindproModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Induction Program</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="indpro_form" name="indpro_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="indpro_srno" name="indpro_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Workshop:</label>
+                      <textarea class="form-control" id="indpro_name" name="indpro_name"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <textarea class="form-control" id="indpro_place" name="indpro_place"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="indpro_year" name="indpro_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Edit Induction Program Modal-->
+          {%for indpro in indpro%}
+          <div class="modal fade" id="Edit_indproModal{{indpro.srno}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Induction Program</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_indpro_form" name="edit_indpro_form" action="/edit_indpro/{{indpro.srno}}"
+                    method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_indpro_srno" value="{{indpro.srno}}"
+                        name="edit_indpro_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Induction Program:</label>
+                      <textarea type="text" class="form-control" id="edit_indpro_name" value=""
+                        name="edit_indpro_name">{{indpro.name}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <input type="" class="form-control" id="edit_indpro_place" value="{{indpro.place}}"
+                        name="edit_indpro_place">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="edit_indpro_year" value="{{indpro.year}}"
+                        name="edit_indpro_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+          <!--===============Conference Organising Secretory Stuff================-->
+          <!--Conf Org Sec Display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="conforgsec"><strong># Conference Organising Secretory</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#AddNewconforgsecModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class="table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">Name of the Program</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for conforgsec in conforgsec|reverse%}
+                  <tr>
+                    <th scope="row">{{conforgsec.srno}}</th>
+                    <td>{{conforgsec.name}}</td>
+                    <td>{{conforgsec.role}}</td>
+                    <td>{{conforgsec.place}}</td>
+                    <td>{{conforgsec.year}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_conforgsecModal{{conforgsec.srno}}" data-bs-whatever="@mdo">Edit</button>
+                    </td>
+                    <td><a href='/delete_conforgsec/{{conforgsec.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add New Conference Organising Secretory Modal-->
+          <div class="modal fade" id="AddNewconforgsecModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Conf. Org. Sec.</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="conforgsec_form" name="conforgsec_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="conforgsec_srno" name="conforgsec_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Conf.:</label>
+                      <textarea class="form-control" id="conforgsec_name" name="conforgsec_name"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Role:</label>
+                      <textarea class="form-control" id="conforgsec_role" name="conforgsec_role"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <textarea class="form-control" id="conforgsec_place" name="conforgsec_place"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="conforgsec_year" name="conforgsec_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Edit Conference Organising Secretory Modal-->
+          {%for conforgsec in conforgsec%}
+          <div class="modal fade" id="Edit_conforgsecModal{{conforgsec.srno}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Conference Organising Secretory</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_conforgsec_form" name="edit_conforgsec_form"
+                    action="/edit_conforgsec/{{conforgsec.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_conforgsec_srno" value="{{conforgsec.srno}}"
+                        name="edit_conforgsec_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Name of Induction Program:</label>
+                      <textarea type="text" class="form-control" id="edit_conforgsec_name" value=""
+                        name="edit_conforgsec_name">{{conforgsec.name}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Role:</label>
+                      <input type="" class="form-control" id="edit_conforgsec_role" value="{{conforgsec.role}}"
+                        name="edit_conforgsec_role">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <input type="" class="form-control" id="edit_conforgsec_place" value="{{conforgsec.place}}"
+                        name="edit_conforgsec_place">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Year:</label>
+                      <input type="number" class="form-control" id="edit_conforgsec_year" value="{{conforgsec.year}}"
+                        name="edit_conforgsec_year">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+          <!--============ Collaborations Stuff =============-->
+          <!--Collaborations display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="collaborations"><strong># Collaborations</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Addnew_CollaborationsModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">About Link</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for clb in clb|reverse%}
+                  <tr>
+                    <th scope="row">{{clb.srno}}</th>
+                    <td>{{clb.firstname}}</td>
+                    <td>{{clb.surname}}</td>
+                    <td>{{clb.place}}</td>
+                    <td>{{clb.aboutlink}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_CollaborationsModal{{clb.srno}}" data-bs-whatever="@mdo">Edit</button>
+                    </td>
+                    <td><a href='/delete_clb/{{clb.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add new Collaborations modal-->
+          <div class="modal fade" id="Addnew_CollaborationsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Collaboration</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="clb_form" name="clb_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="clb_srno" name="clb_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">First Name:</label>
+                      <input type="text" class="form-control" id="clb_firstname" name="clb_firstname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Surname:</label>
+                      <input type="text" class="form-control" id="clb_surname" name="clb_surname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place (like university,etc)::</label>
+                      <input type="text" class="form-control" id="clb_place" name="clb_place">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">About Link (like Researchgate
+                        profile,etc)::</label>
+                      <input type="text" class="form-control" id="clb_aboutlink" name="clb_aboutlink">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--Edit Collaborations-->
+          {%for clb in clb%}
+          <div class="modal fade" id="Edit_CollaborationsModal{{clb.srno}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Collaboration</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_clb_form" name="edit_clb_form" action="/edit_clb/{{clb.srno}}" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_clb_srno" value="{{clb.srno}}"
+                        name="edit_clb_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Firt Name:</label>
+                      <input type="text" class="form-control" id="edit_clb_firstname" value="{{clb.firstname}}"
+                        name="edit_clb_firstname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Surname:</label>
+                      <input type="text" class="form-control" id="edit_clb_surname" value="{{clb.surname}}"
+                        name="edit_clb_surname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Place:</label>
+                      <input type="text" class="form-control" id="edit_clb_place" value="{{clb.place}}"
+                        name="edit_clb_place">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">About Link</label>
+                      <input type="text" class="form-control" id="edit_clb_aboutlink" value="{{clb.aboutlink}}"
+                        name="edit_clb_aboutlink">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+
+
+          <!--============ Group Members Stuff =============-->
+          <!--Group Members display table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <div class="d-flex">
+                  <h4 id="groupmembers"><strong># Group Members</strong></h4>
+                  <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal"
+                    data-bs-target="#Addnew_GroupMembersModal" data-bs-whatever="@mdo">Add New</button>
+                </div>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.No.</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Surname</th>
+                    <!--<th scope="col">Image Link</th>-->
+                    <th scope="col">Role</th>
+                    <!--<th scope="col">Info</th>-->
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for grp_memb in grp_memb|reverse%}
+                  <tr>
+                    <th scope="row">{{grp_memb.srno}}</th>
+                    <td>{{grp_memb.firstname}}</td>
+                    <td>{{grp_memb.surname}}</td>
+                    <!--<td>{{grp_memb.imagelink}}</td>-->
+                    <td>{{grp_memb.role}}</td>
+                    <!--<td>{{grp_memb.info}}</td>-->
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#Edit_GroupMembersModal{{grp_memb.srno}}" data-bs-whatever="@mdo">Edit</button>
+                    </td>
+                    <td><a href='/delete_grp_memb/{{grp_memb.srno}}'><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!--Add new Group Members modal-->
+          <div class="modal fade" id="Addnew_GroupMembersModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Group Member</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="grp_memb_form" name="grp_memb_form" action="/admin" method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="grp_memb_srno" name="grp_memb_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">First Name:</label>
+                      <input type="text" class="form-control" id="grp_memb_firstname" name="grp_memb_firstname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Surname:</label>
+                      <input type="text" class="form-control" id="grp_memb_surname" name="grp_memb_surname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="grp_memb_imglink" name="grp_memb_imglink">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Role:</label>
+                      <input type="text" class="form-control" id="grp_memb_role" name="grp_memb_role">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Info:</label>
+                      <textarea class="form-control" id="grp_memb_info" name="grp_memb_info"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--Edit Group Member-->
+          {%for grp_memb in grp_memb%}
+          <div class="modal fade" id="Edit_GroupMembersModal{{grp_memb.srno}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Membership</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit_grp_memb_form" name="edit_grp_memb_form" action="/edit_grp_memb/{{grp_memb.srno}}"
+                    method="post">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Sr.No.:</label>
+                      <input type="text" class="form-control" id="edit_grp_memb_srno" value="{{grp_memb.srno}}"
+                        name="edit_grp_memb_srno">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Firt Name:</label>
+                      <input type="text" class="form-control" id="edit_grp_memb_firstname"
+                        value="{{grp_memb.firstname}}" name="edit_grp_memb_firstname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Surname:</label>
+                      <input type="text" class="form-control" id="edit_grp_memb_surname" value="{{grp_memb.surname}}"
+                        name="edit_grp_memb_surname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Image Link:</label>
+                      <input type="text" class="form-control" id="edit_grp_memb_imglink" value="{{grp_memb.imagelink}}"
+                        name="edit_grp_memb_imglink">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Role:</label>
+                      <input type="text" class="form-control" id="edit_grp_memb_role" value="{{grp_memb.role}}"
+                        name="edit_grp_memb_role">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Info:</label>
+                      <textarea type="text" class="form-control" id="edit_grp_memb_info"
+                        name="edit_grp_memb_info">{{grp_memb.info}}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="sumbit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+
+
+
+          <!--Contacts Stuff-->
+          <!--Display Contact Table-->
+          <div class="my-5">
+            <div class="card card-style">
+              <div class="card-header">
+                <h4 id="contacts"><strong>Contacts</strong></h4>
+              </div>
+              <table class=" table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Info</th>
+                    <!--<th scope="col">Edit</th>-->
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for cont in cont%}
+                  <tr>
+                    <td>{{cont.name}}</td>
+                    <td>{{cont.email}}</td>
+                    <td>{{cont.subject}}</td>
+                    <td>{{cont.message}}</td>
+                    <td>{{cont.info}}</td>
+                    <!--<td><button type="button" class="btn btn-primary">Edit</button></td>-->
+                    <td><a href="/delete_cont/{{cont.name}}"><button type="button"
+                          class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+    </main>
+  </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="/static/js/admin.js"></script>
+</body>
+
+</html>
