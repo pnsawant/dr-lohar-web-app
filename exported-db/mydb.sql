@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `awards`
+-- Table structure for table `Awards`
 --
 
-CREATE TABLE `awards` (
+CREATE TABLE `Awards` (
   `SrNo` int(11) NOT NULL,
   `Title` varchar(500) DEFAULT NULL,
   `Subtitle` varchar(500) DEFAULT NULL,
@@ -35,10 +35,10 @@ CREATE TABLE `awards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `awards`
+-- Dumping data for table `Awards`
 --
 
-INSERT INTO `awards` (`SrNo`, `Title`, `Subtitle`, `ImageLink`) VALUES
+INSERT INTO `Awards` (`SrNo`, `Title`, `Subtitle`, `ImageLink`) VALUES
 (1, 'National Graduate Physics Examination', 'Indian Association of Physics Teachers (IAPT)', 'None'),
 (2, 'UGC-Meritorious Fellow', 'University grant commission (UGC)', 'None'),
 (3, 'Early Career Research Award', 'Department of Science and Technology-Science and Engineering Research Board (DST-SERB) government of India', 'https://drive.google.com/uc?export=view&id=1AlfoypS-S783e1Rg30dKoqPa7bFByTvG'),
@@ -48,10 +48,10 @@ INSERT INTO `awards` (`SrNo`, `Title`, `Subtitle`, `ImageLink`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `collaborations`
+-- Table structure for table `Collaborations`
 --
 
-CREATE TABLE `collaborations` (
+CREATE TABLE `Collaborations` (
   `SrNo` int(11) NOT NULL,
   `FirstName` varchar(500) DEFAULT NULL,
   `Surname` varchar(500) DEFAULT NULL,
@@ -60,10 +60,10 @@ CREATE TABLE `collaborations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `collaborations`
+-- Dumping data for table `Collaborations`
 --
 
-INSERT INTO `collaborations` (`SrNo`, `FirstName`, `Surname`, `Place`, `AboutLink`) VALUES
+INSERT INTO `Collaborations` (`SrNo`, `FirstName`, `Surname`, `Place`, `AboutLink`) VALUES
 (1, 'Prof V.J.', 'Fulari', 'Department of Physics, Shivaji University, Kolhapur', 'https'),
 (2, 'Dr. M. C.', 'Rath', 'Bhaba Atomic Research Centre, Mumbai', 'https'),
 (3, 'Dr. Ranjeet Patil and  ', 'Prof. Y. R. Ma', 'Nantional Dong Wa University, Taiwan', 'dgdf'),
@@ -73,10 +73,10 @@ INSERT INTO `collaborations` (`SrNo`, `FirstName`, `Surname`, `Place`, `AboutLin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `conferences`
+-- Table structure for table `Conferences`
 --
 
-CREATE TABLE `conferences` (
+CREATE TABLE `Conferences` (
   `SrNo` int(11) NOT NULL,
   `Name` varchar(500) DEFAULT NULL,
   `Place` varchar(500) DEFAULT NULL,
@@ -84,10 +84,10 @@ CREATE TABLE `conferences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `conferences`
+-- Dumping data for table `Conferences`
 --
 
-INSERT INTO `conferences` (`SrNo`, `Name`, `Place`, `Year`) VALUES
+INSERT INTO `Conferences` (`SrNo`, `Name`, `Place`, `Year`) VALUES
 (1, 'International Conference on Multifunctional Materials (ICMM 2010)', 'Banaras Hindu University, Varanasi', 2010),
 (2, 'National seminar on Physics of materials and Materials Based device fabrication (NSPM-MDF-2011)', 'Department of Physics, Shivaji University, Kolhapur', 2011),
 (3, '1st international conference on Physics of Materials and Materials based device fabrication, (ICPM-MDF 2012)', 'Department of Physics, Shivaji University, Kolhapur', 2012),
@@ -109,10 +109,10 @@ INSERT INTO `conferences` (`SrNo`, `Name`, `Place`, `Year`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `conforgsec`
+-- Table structure for table `ConfOrgSec`
 --
 
-CREATE TABLE `conforgsec` (
+CREATE TABLE `ConfOrgSec` (
   `SrNo` int(11) NOT NULL,
   `Name` varchar(500) DEFAULT NULL,
   `Role` varchar(500) DEFAULT NULL,
@@ -121,19 +121,19 @@ CREATE TABLE `conforgsec` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `conforgsec`
+-- Dumping data for table `ConfOrgSec`
 --
 
-INSERT INTO `conforgsec` (`SrNo`, `Name`, `Role`, `Place`, `Year`) VALUES
+INSERT INTO `ConfOrgSec` (`SrNo`, `Name`, `Role`, `Place`, `Year`) VALUES
 (1, 'National conference on Recent trends in Physical, Chemical and Nanosciences- 2017 (NCRT-PCNano-2017)', 'Organizing Secretory', 'Department of Physics, Lal Bahadur Shastri College of Arts, Science and Commerce, Satara', 2017);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contacts`
+-- Table structure for table `Contacts`
 --
 
-CREATE TABLE `contacts` (
+CREATE TABLE `Contacts` (
   `Name` varchar(500) NOT NULL,
   `Email` varchar(500) NOT NULL,
   `Subject` varchar(500) NOT NULL,
@@ -142,19 +142,19 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `contacts`
+-- Dumping data for table `Contacts`
 --
 
-INSERT INTO `contacts` (`Name`, `Email`, `Subject`, `Message`, `Info`) VALUES
+INSERT INTO `Contacts` (`Name`, `Email`, `Subject`, `Message`, `Info`) VALUES
 ('MyName', 'name@gmail.com', 'My Subject', 'Hello There!', '08 Feb 2021 | 14:45');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groupmembers`
+-- Table structure for table `GroupMembers`
 --
 
-CREATE TABLE `groupmembers` (
+CREATE TABLE `GroupMembers` (
   `SrNo` int(11) NOT NULL,
   `FirstName` varchar(500) DEFAULT NULL,
   `Surname` varchar(500) DEFAULT NULL,
@@ -164,10 +164,10 @@ CREATE TABLE `groupmembers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `groupmembers`
+-- Dumping data for table `GroupMembers`
 --
 
-INSERT INTO `groupmembers` (`SrNo`, `FirstName`, `Surname`, `ImageLink`, `Role`, `Info`) VALUES
+INSERT INTO `GroupMembers` (`SrNo`, `FirstName`, `Surname`, `ImageLink`, `Role`, `Info`) VALUES
 (1, 'Mr Onkar', 'Pore', 'https://drive.google.com/uc?export=view&id=1Id-Fh-i60s-QnrnxbRDVWYL_56y_OlYS', 'PhD Student', 'I am working under the guidance of Dr. Gaurav Lohar on the subject of supercapacitors'),
 (2, 'Mr Rohit', 'Kamble', 'https://drive.google.com/uc?export=view&id=1I2kJoU4LnuDCB2KTGmFCimtx0N_vTQN8', 'PhD Student', 'I am working under the guidance of Dr Lohar on the subject of perovskite'),
 (3, 'Mr Digambar', 'Sawant', 'https://drive.google.com/uc?export=view&id=114okVmXs11sglh02hsL24en1m4lMTwmE', 'Research Student', 'I am working on the issue of supercapacitors under the guidance of Dr Gaurav Lohar'),
@@ -177,10 +177,10 @@ INSERT INTO `groupmembers` (`SrNo`, `FirstName`, `Surname`, `ImageLink`, `Role`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inductionprogram`
+-- Table structure for table `InductionProgram`
 --
 
-CREATE TABLE `inductionprogram` (
+CREATE TABLE `InductionProgram` (
   `SrNo` int(11) NOT NULL,
   `Name` varchar(500) DEFAULT NULL,
   `Place` varchar(500) DEFAULT NULL,
@@ -188,30 +188,30 @@ CREATE TABLE `inductionprogram` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `inductionprogram`
+-- Dumping data for table `InductionProgram`
 --
 
-INSERT INTO `inductionprogram` (`SrNo`, `Name`, `Place`, `Year`) VALUES
+INSERT INTO `InductionProgram` (`SrNo`, `Name`, `Place`, `Year`) VALUES
 (1, 'Induction program on various aspects of Teaching-learning such as pedagogical tools, Assessment & evaluation methods, ICT and at familiarizing them with the framework of higher education in India.', 'Indian institute of Science Education and Research, Pune', 2018),
 (2, '73rd Refresher Course in Physics', 'UGC- Human Resource development Centre, Punjabi University, Patiyala', 2019);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `memberships`
+-- Table structure for table `Memberships`
 --
 
-CREATE TABLE `memberships` (
+CREATE TABLE `Memberships` (
   `SrNo` int(11) NOT NULL,
   `Title` varchar(500) DEFAULT NULL,
   `Subtitle` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `memberships`
+-- Dumping data for table `Memberships`
 --
 
-INSERT INTO `memberships` (`SrNo`, `Title`, `Subtitle`) VALUES
+INSERT INTO `Memberships` (`SrNo`, `Title`, `Subtitle`) VALUES
 (1, 'Laser & Spectroscopy Society of India', 'Life Member'),
 (2, 'Indian Science Congress', 'Life Member'),
 (3, 'Institute of Scholar (InSc unit of SDPL)', 'Life Member');
@@ -219,10 +219,10 @@ INSERT INTO `memberships` (`SrNo`, `Title`, `Subtitle`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `patents`
+-- Table structure for table `Patents`
 --
 
-CREATE TABLE `patents` (
+CREATE TABLE `Patents` (
   `SrNo` int(11) NOT NULL,
   `Title` varchar(500) DEFAULT NULL,
   `Subtitle` varchar(500) DEFAULT NULL,
@@ -236,19 +236,19 @@ CREATE TABLE `patents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `patents`
+-- Dumping data for table `Patents`
 --
 
-INSERT INTO `patents` (`SrNo`, `Title`, `Subtitle`, `ImageLink`, `para1`, `line1`, `line2`, `line3`, `line4`, `para2`) VALUES
+INSERT INTO `Patents` (`SrNo`, `Title`, `Subtitle`, `ImageLink`, `para1`, `line1`, `line2`, `line3`, `line4`, `para2`) VALUES
 (1, 'PATENT: 1', 'Effect of high energy electron irradiation on gold substitute electrochemically reduced graphene oxide: modified photoluminescence properties', 'https://drive.google.com/uc?export=view&id=11rlPvsf52noenP4EBVF4tFDszN2HyLzc', '', 'AGENCY/COUNTRY: INDIAN', 'CBR NO: 2072', 'CBR Date - 30/01/2017', 'Ordinary application', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projects`
+-- Table structure for table `Projects`
 --
 
-CREATE TABLE `projects` (
+CREATE TABLE `Projects` (
   `SrNo` int(11) NOT NULL,
   `Title` varchar(500) DEFAULT NULL,
   `Subtitle` varchar(500) DEFAULT NULL,
@@ -262,20 +262,20 @@ CREATE TABLE `projects` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `projects`
+-- Dumping data for table `Projects`
 --
 
-INSERT INTO `projects` (`SrNo`, `Title`, `Subtitle`, `ImageLink`, `para1`, `line1`, `line2`, `line3`, `line4`, `para2`) VALUES
+INSERT INTO `Projects` (`SrNo`, `Title`, `Subtitle`, `ImageLink`, `para1`, `line1`, `line2`, `line3`, `line4`, `para2`) VALUES
 (1, 'PROJECT: 1', 'Performance and evaluation of high energy electron irradiation on metal oxide reduced graphene oxide composite for supercapacitor and biosensor applications', 'https://drive.google.com/uc?export=view&id=1Yb1I2S1koaZBGHJwstkHilG_snwV18UR', 'Related to Early Career research award', 'Funding : Department od Science and Technology - Science Engineering Research Board (DST-SERB)', 'Cost in Rs. 21.77 Lakh', 'Approved equipment : 5  ', 'Period of availability : 3 years', ''),
 (2, 'PROJECT: 2', 'Performance and evaluation of copper oxide reduced graphene oxide composite for supercapacitor and biosensor applications', 'https://drive.google.com/uc?export=view&id=1FpcvirVIJzOoOaD9HqWMFFT4V2Ik91Bw', 'Grant under Research Initiation Scheme 2017-18', 'Funding : Shivaji University, Kolhapur', 'Total Cost in Rs. 70000/-', 'First Installment : Rs. 55,000/-', 'Total period of project : 2 years', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `publications`
+-- Table structure for table `Publications`
 --
 
-CREATE TABLE `publications` (
+CREATE TABLE `Publications` (
   `SrNo` int(11) NOT NULL,
   `Reference` varchar(500) DEFAULT NULL,
   `DOI` varchar(500) DEFAULT NULL,
@@ -283,10 +283,10 @@ CREATE TABLE `publications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `publications`
+-- Dumping data for table `Publications`
 --
 
-INSERT INTO `publications` (`SrNo`, `Reference`, `DOI`, `Year`) VALUES
+INSERT INTO `Publications` (`SrNo`, `Reference`, `DOI`, `Year`) VALUES
 (1, 'J.V. Thombare, V.T. Kambale, V.K. Bansode, G.M. Lohar, S.H. Han, V.J. Fulari, Chemical Synthesis of Polypyrrole Thin Films using Ferric nitrate as an Oxidant, Journal of Shivaji University (Science & Technology) 41 2014-2015.', 'http://www.unishivaji.ac.in/uploads/journal/JOURNAL-42(2)/PE%2035%20.pdf', 2012),
 (2, 'S.K. Shinde, J.V. Thombare, G.M. Lohar, U.M. Chougale, V.J. Fulari. Preparation and characterization of CdSe 0.6 Te 0.4 thin films by electrodeposition method', 'https://inis.iaea.org/search/search.aspx?orig_q=RN:44033887', 2012),
 (3, 'G.M. Lohar, J.V. Thombare, S.K. Shinde, S.S. Fulari, V.J. More, Photoelectrochemical cell performance of electrodeposited iron doped zinc selenide thin film, Energy Efficient Technologies for Sustainability (ICEETS), 2013 (2013) 411-413', '10.1109/ICEETS.2013.6533417', 2013),
@@ -339,10 +339,10 @@ INSERT INTO `publications` (`SrNo`, `Reference`, `DOI`, `Year`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `workshop`
+-- Table structure for table `Workshop`
 --
 
-CREATE TABLE `workshop` (
+CREATE TABLE `Workshop` (
   `SrNo` int(11) NOT NULL,
   `Name` varchar(500) DEFAULT NULL,
   `Place` varchar(500) DEFAULT NULL,
@@ -350,10 +350,10 @@ CREATE TABLE `workshop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `workshop`
+-- Dumping data for table `Workshop`
 --
 
-INSERT INTO `workshop` (`SrNo`, `Name`, `Place`, `Year`) VALUES
+INSERT INTO `Workshop` (`SrNo`, `Name`, `Place`, `Year`) VALUES
 (1, 'Environmental problems and Biodiversity', 'Department of Zoology, Lal Bahadur Shastri College of Arts, Science and Commerce, Satara', 2017),
 (2, 'Digital literacy Workshop', 'Shrinivas Patil Foundation Sunbeam Education Trust, Karad', 2017),
 (3, 'One day Workshop on Avishkar', 'Sadguru Gadage Maharaj College, Karad', 2017),
@@ -371,75 +371,75 @@ INSERT INTO `workshop` (`SrNo`, `Name`, `Place`, `Year`) VALUES
 --
 
 --
--- Indexes for table `awards`
+-- Indexes for table `Awards`
 --
-ALTER TABLE `awards`
+ALTER TABLE `Awards`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `collaborations`
+-- Indexes for table `Collaborations`
 --
-ALTER TABLE `collaborations`
+ALTER TABLE `Collaborations`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `conferences`
+-- Indexes for table `Conferences`
 --
-ALTER TABLE `conferences`
+ALTER TABLE `Conferences`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `conforgsec`
+-- Indexes for table `ConfOrgSec`
 --
-ALTER TABLE `conforgsec`
+ALTER TABLE `ConfOrgSec`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `contacts`
+-- Indexes for table `Contacts`
 --
-ALTER TABLE `contacts`
+ALTER TABLE `Contacts`
   ADD PRIMARY KEY (`Info`);
 
 --
--- Indexes for table `groupmembers`
+-- Indexes for table `GroupMembers`
 --
-ALTER TABLE `groupmembers`
+ALTER TABLE `GroupMembers`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `inductionprogram`
+-- Indexes for table `InductionProgram`
 --
-ALTER TABLE `inductionprogram`
+ALTER TABLE `InductionProgram`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `memberships`
+-- Indexes for table `Memberships`
 --
-ALTER TABLE `memberships`
+ALTER TABLE `Memberships`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `patents`
+-- Indexes for table `Patents`
 --
-ALTER TABLE `patents`
+ALTER TABLE `Patents`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `projects`
+-- Indexes for table `Projects`
 --
-ALTER TABLE `projects`
+ALTER TABLE `Projects`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `publications`
+-- Indexes for table `Publications`
 --
-ALTER TABLE `publications`
+ALTER TABLE `Publications`
   ADD PRIMARY KEY (`SrNo`);
 
 --
--- Indexes for table `workshop`
+-- Indexes for table `Workshop`
 --
-ALTER TABLE `workshop`
+ALTER TABLE `Workshop`
   ADD PRIMARY KEY (`SrNo`);
 COMMIT;
 
